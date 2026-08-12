@@ -1,14 +1,21 @@
-# Database 생성
+# Database 생성(root password: maria)
 mysql -u root –p
-show databases;
-use mysql;
-create database python_db;
-create user 'python'@'%' identified by 'python';
-grant all privileges on python_db.* to 'python'@'%';
-flush privileges;
-select user, host from user;
-exit;
+    # database 목록 확인
+    show databases;
+    # 사용할 db 선택
+    use mysql;
+    # db 생성
+    create database python_db;
+    # username이 python, password가 python인 계정 생성
+    create user 'python'@'%' identified by 'python';
+    # python 계정에 python_db에 대한 모든 권한 부여
+    grant all privileges on python_db.* to 'python'@'%';
+    # grant 명령을 db에 flush
+    flush privileges;
+    # 생성된 user 확인
+    select user, host from user;
+    exit;
 
-mysql -u python -p
-show grants for current_user;
-use python_db;
+mysql -u python -p(python password: python)
+    show grants for current_user;
+    use python_db;
