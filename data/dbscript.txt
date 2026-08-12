@@ -19,3 +19,8 @@ mysql -u root –p
 mysql -u python -p(python password: python)
     show grants for current_user;
     use python_db;
+
+    # songs 테이블의 구조 확인
+    desc songs;
+
+    select 곡명, 장르 from songs where 가수 = '방탄소년단';
